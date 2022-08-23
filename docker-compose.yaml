@@ -1,0 +1,18 @@
+version: '3.7'
+services:
+  animal:
+    image: ahsansabir30/animal
+    build: ./animal
+    ports:
+    - target: 5001
+      published: 5001
+    deploy:
+      replicas: 4
+  noise:
+    image: ahsansabir30/noise
+    build: ./noise
+    ports:
+    - target: 5000
+      published: 5000
+    deploy:
+      replicas: 4
